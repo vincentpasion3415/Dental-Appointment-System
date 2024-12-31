@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #004aad, #007bff);
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header div a {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header nav a {
+            color: #fff;
+            margin: 0 0.75rem;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            background: linear-gradient(180deg, #007bff, #e3f2fd);
+            text-align: center;
+            padding: 2rem;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card {
+            background: #f1f9ff;
+            border: 1px solid #d1e9ff;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: #0056b3;
+        }
+
+        footer {
+            background-color: #0056b3;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="{% url 'home' %}">Dental Clinic</a>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'book_appointment' %}">Book Appointment</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Our Services</h1>
+        <p>We offer a range of high-quality dental services for you and your family.</p>
+    </div>
+
+    <div class="container">
+        <div class="service-card">
+            <h3>Teeth Cleaning</h3>
+            <p>Professional teeth cleaning to ensure oral health and hygiene.</p>
+        </div>
+        <div class="service-card">
+            <h3>Teeth Whitening</h3>
+            <p>Brighten your smile with our safe and effective whitening treatments.</p>
+        </div>
+        <div class="service-card">
+            <h3>Dental Implants</h3>
+            <p>Restore your smile with natural-looking and durable dental implants.</p>
+        </div>
+        <div class="service-card">
+            <h3>Orthodontics</h3>
+            <p>Correct teeth alignment with braces and modern orthodontic solutions.</p>
+        </div>
+        <div class="service-card">
+            <h3>Emergency Dental Care</h3>
+            <p>Immediate attention for urgent dental issues.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Dental Clinic. All rights reserved.
+    </footer>
+</body>
+</html>

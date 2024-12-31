@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    /* General styling */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9fb;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header styling */
+    header {
+        background: linear-gradient(90deg, #004aad, #007bff);
+        color: #fff;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header div a {
+        font-size: 1.8rem; /* Consistent with the previous "Dental Clinic" size */
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    header div a:hover {
+        color: #ffd700;
+    }
+
+    header nav a {
+        color: #fff;
+        margin: 0 0.75rem;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+        color: #ffd700;
+    }
+
+    /* Form container styling */
+    .container {
+        max-width: 600px;
+        margin: 4rem auto 2rem;
+        padding: 2rem;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    form {
+        margin-top: 1rem;
+    }
+
+    label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    input, select, textarea {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        margin: 0.5rem 0 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        transition: border 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    /* Footer styling */
+    footer {
+        background-color: #0056b3;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer a {
+        color: #ffd700;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <div>
+            <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">Dental Clinic</a>
+        </div>
+        <nav>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Book an Appointment</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 Dental Clinic. All rights reserved.
+        <a href="#top">Back to top</a>
+    </footer>
+</body>
+</html>
